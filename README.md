@@ -26,7 +26,7 @@ module 下添加
     
 添加点击方法网络判断
 
-    @ClickNet()(使用默认值,其中存在两个参数，netErrorMsg默认值为“网络错误”,isCheckNet默认值为true(也就是说点击方法网络判断打开))
+    @ClickNet(使用默认值,其中存在两个参数，netErrorMsg默认值为“网络错误”,isCheckNet默认值为true(也就是说点击方法网络判断打开))
     @ClickNet(netErrorMsg = "请检查您的网络")(更改点击事件提示问题)
     @ClickNet(isCheckNet = false)(关闭点击事件网络监听)
     
