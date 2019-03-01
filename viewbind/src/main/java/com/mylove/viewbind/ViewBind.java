@@ -26,5 +26,6 @@ public class ViewBind {
     private static void bind(ViewInit inject, Object object) {
         ViewInject.injectFiled(inject, object);
         ViewInject.injectClick(inject, object);
+        ViewInject.injectException(inject, object);
     }
 }

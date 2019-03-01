@@ -12,6 +12,9 @@ import java.lang.reflect.Method;
  * @overview
  */
 class ViewInject {
+    /**
+     * 控件id反射
+     */
     static void injectFiled(ViewInit inject, Object object) {
         Class<?> aClass = object.getClass();
         Field[] fields = aClass.getDeclaredFields();
@@ -32,6 +35,9 @@ class ViewInject {
         }
     }
 
+    /**
+     * 控件点击事件反射
+     */
     static void injectClick(ViewInit inject, Object object) {
         Class<?> aClass = object.getClass();
         Method[] methods = aClass.getMethods();
@@ -54,6 +60,17 @@ class ViewInject {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    static void injectException(ViewInit inject, Object object) {
+        Class<?> aClass = object.getClass();
+        Method[] methods = aClass.getMethods();
+        for (Method method : methods) {
+            Exceptions exceptions = method.getAnnotation(Exceptions.class);
+            if (exceptions != null) {
+
             }
         }
     }
