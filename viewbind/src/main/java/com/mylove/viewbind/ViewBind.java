@@ -1,6 +1,7 @@
 package com.mylove.viewbind;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -13,6 +14,7 @@ public class ViewBind {
 
     public static void bind(Activity activity) {
         bind(new ViewInit(activity), activity);
+        Log.v("测试", "点击0");
     }
 
     public static void bind(View view) {

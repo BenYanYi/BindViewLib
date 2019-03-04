@@ -1,5 +1,6 @@
 package com.mylove.viewbind;
 
+import android.util.Log;
 import android.view.View;
 
 import java.lang.reflect.Field;
@@ -42,6 +43,7 @@ class ViewInject {
         Class<?> aClass = object.getClass();
         Method[] methods = aClass.getMethods();
         for (Method method : methods) {
+            Log.v("测试", "点击1");
             OnClick onClick = method.getAnnotation(OnClick.class);
             if (onClick != null) {
                 int[] values = onClick.value();
