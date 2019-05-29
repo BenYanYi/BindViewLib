@@ -1,6 +1,5 @@
 package com.mylove.viewbind;
 
-import android.util.Log;
 import android.view.View;
 
 import java.lang.reflect.Field;
@@ -41,13 +40,12 @@ class ViewInject {
      */
     static void injectClick(ViewInit inject, Object object) {
         Class<?> aClass = object.getClass();
-        Method[] methods = aClass.getMethods();
+        Method[] methods = aClass.getDeclaredMethods();
         for (Method method : methods) {
-            Log.v("测试", "点击1");
             OnClick onClick = method.getAnnotation(OnClick.class);
             if (onClick != null) {
                 int[] values = onClick.value();
-                if (values != null && values.length > 0) {
+                if (values.length > 0) {
                     for (int value : values) {
                         View view = inject.find(value);
                         String netErrorMsg = "";
@@ -65,15 +63,19 @@ class ViewInject {
             }
         }
     }
+//    Mac⁩ ▸ ⁨应用程序⁩ ▸ ⁨Android Studio⁩ ▸ ⁨Contents⁩ ▸ ⁨gradle⁩
+//    #Gradle
+//    export GRADLE_HOME=/Applications/Android\ Studio.app/Contents/gradle/gradle-4.1
+//    export PATH=$PATH:$GRADLE_HOME/bin
 
-    static void injectException(ViewInit inject, Object object) {
-        Class<?> aClass = object.getClass();
-        Method[] methods = aClass.getMethods();
-        for (Method method : methods) {
-            Exceptions exceptions = method.getAnnotation(Exceptions.class);
-            if (exceptions != null) {
-
-            }
-        }
-    }
+//    static void injectException(ViewInit inject, Object object) {
+//        Class<?> aClass = object.getClass();
+//        Method[] methods = aClass.getMethods();
+//        for (Method method : methods) {
+//            Exceptions exceptions = method.getAnnotation(Exceptions.class);
+//            if (exceptions != null) {
+//
+//            }
+//        }
+//    }
 }

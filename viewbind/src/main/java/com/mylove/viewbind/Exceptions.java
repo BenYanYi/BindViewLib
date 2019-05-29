@@ -28,6 +28,6 @@ import java.lang.annotation.Target;
 //        ElementType.PACKAGE 作用于包
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Exceptions {
+@interface Exceptions {
 
 }

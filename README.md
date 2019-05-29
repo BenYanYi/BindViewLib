@@ -4,7 +4,7 @@
 
 module 下添加
 
-    compile 'com.yanyi.benyanyi:viewbind:1.0.0'
+    implementation 'com.yanyi.benyanyi:viewbind:1.0.1'
     
 ### 使用方法
 
@@ -32,6 +32,7 @@ module 下添加
     
     
 ### 更新记录
+* 2019/05/29 提交1.0.1版本，优化一些已知细节
 * 2018/12/26 提交1.0.0版本
 
 <br/>
